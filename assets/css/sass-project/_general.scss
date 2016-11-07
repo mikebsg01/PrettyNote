@@ -1,0 +1,109 @@
+/*
+ * General Styles
+ * ====================================================== */
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.content-wrapper {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.content-wrapper:before,
+.content-wrapper:after,
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.fc-black {
+  color: #333333;
+}
+
+.fc-white {
+  color: #F1F1F1;
+}
+
+.fc-faded {
+  color: #777777;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-side-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-margin {
+  margin-top: 15px;
+}
+
+.bottom-margin {
+  margin-bottom: 15px;
+}
+
+.no-border {
+  border: 0;
+}
+
+.app-well {
+  background-color: #E4E4E4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}

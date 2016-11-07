@@ -1,0 +1,500 @@
+/**
+ * Website: PrettyNote
+ * ============================== //
+ * 
+ * Author: Michael Serrato
+ * E-mail: mikebsg01@gmail.com
+ * ============================== //
+ */
+/*
+ * Main Styles
+ * ====================================================== */
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 12px;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #616161;
+  border-radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F1F1F1;
+  color: #333333;
+}
+
+.grid-sp-12, .grid-sp-11, .grid-sp-10, .grid-sp-9, .grid-sp-8, .grid-sp-7, .grid-sp-6, .grid-sp-5, .grid-sp-4, .grid-sp-3, .grid-sp-2, .grid-sp-1,
+.grid-ta-12, .grid-ta-11, .grid-ta-10, .grid-ta-9, .grid-ta-8, .grid-ta-7, .grid-ta-6, .grid-ta-5, .grid-ta-4, .grid-ta-3, .grid-ta-2, .grid-ta-1,
+.grid-ds-12, .grid-ds-11, .grid-ds-10, .grid-ds-9, .grid-ds-8, .grid-ds-7, .grid-ds-6, .grid-ds-5, .grid-ds-4, .grid-ds-3, .grid-ds-2, .grid-ds-1,
+.grid-bd-12, .grid-bd-11, .grid-bd-10, .grid-bd-9, .grid-bd-8, .grid-bd-7, .grid-bd-6, .grid-bd-5, .grid-bd-4, .grid-bd-3, .grid-bd-2, .grid-bd-1 {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+}
+
+/* RESPONSIVE
+   ========================================================================= */
+/*
+ * Styles for Tablets
+ * ====================================================== */
+@media (min-width: 768px) {
+  .grid-ta-12 {
+    width: 100%;
+  }
+
+  .grid-ta-11 {
+    width: 91.666666%;
+  }
+
+  .grid-ta-10 {
+    width: 83.333333%;
+  }
+
+  .grid-ta-9 {
+    width: 75%;
+  }
+
+  .grid-ta-8 {
+    width: 66.666666%;
+  }
+
+  .grid-ta-7 {
+    width: 58.333333%;
+  }
+
+  .grid-ta-6 {
+    width: 50%;
+  }
+
+  .grid-ta-5 {
+    width: 41.666666%;
+  }
+
+  .grid-ta-4 {
+    width: 33.333333%;
+  }
+
+  .grid-ta-3 {
+    width: 25%;
+  }
+
+  .grid-ta-2 {
+    width: 16.666666%;
+  }
+
+  .grid-ta-1 {
+    width: 8.333333%;
+  }
+
+  .grid-ta-offset-12 {
+    margin-left: 100%;
+  }
+
+  .grid-ta-offset-11 {
+    margin-left: 91.666666%;
+  }
+
+  .grid-ta-offset-10 {
+    margin-left: 83.333333%;
+  }
+
+  .grid-ta-offset-9 {
+    margin-left: 75%;
+  }
+
+  .grid-ta-offset-8 {
+    margin-left: 66.666666%;
+  }
+
+  .grid-ta-offset-7 {
+    margin-left: 58.333333%;
+  }
+
+  .grid-ta-offset-6 {
+    margin-left: 50%;
+  }
+
+  .grid-ta-offset-5 {
+    margin-left: 41.666666%;
+  }
+
+  .grid-ta-offset-4 {
+    margin-left: 33.333333%;
+  }
+
+  .grid-ta-offset-3 {
+    margin-left: 25%;
+  }
+
+  .grid-ta-offset-2 {
+    margin-left: 16.666666%;
+  }
+
+  .grid-ta-offset-1 {
+    margin-left: 8.333333%;
+  }
+}
+/*
+ * Styles for Desktop (PC)
+ * ====================================================== */
+@media (min-width: 1024px) {
+  .grid-ds-12 {
+    width: 100%;
+  }
+
+  .grid-ds-11 {
+    width: 91.666666%;
+  }
+
+  .grid-ds-10 {
+    width: 83.333333%;
+  }
+
+  .grid-ds-9 {
+    width: 75%;
+  }
+
+  .grid-ds-8 {
+    width: 66.666666%;
+  }
+
+  .grid-ds-7 {
+    width: 58.333333%;
+  }
+
+  .grid-ds-6 {
+    width: 50%;
+  }
+
+  .grid-ds-5 {
+    width: 41.666666%;
+  }
+
+  .grid-ds-4 {
+    width: 33.333333%;
+  }
+
+  .grid-ds-3 {
+    width: 25%;
+  }
+
+  .grid-ds-2 {
+    width: 16.666666%;
+  }
+
+  .grid-ds-1 {
+    width: 8.333333%;
+  }
+
+  .grid-ds-offset-12 {
+    margin-left: 100%;
+  }
+
+  .grid-ds-offset-11 {
+    margin-left: 91.666666%;
+  }
+
+  .grid-ds-offset-10 {
+    margin-left: 83.333333%;
+  }
+
+  .grid-ds-offset-9 {
+    margin-left: 75%;
+  }
+
+  .grid-ds-offset-8 {
+    margin-left: 66.666666%;
+  }
+
+  .grid-ds-offset-7 {
+    margin-left: 58.333333%;
+  }
+
+  .grid-ds-offset-6 {
+    margin-left: 50%;
+  }
+
+  .grid-ds-offset-5 {
+    margin-left: 41.666666%;
+  }
+
+  .grid-ds-offset-4 {
+    margin-left: 33.333333%;
+  }
+
+  .grid-ds-offset-3 {
+    margin-left: 25%;
+  }
+
+  .grid-ds-offset-2 {
+    margin-left: 16.666666%;
+  }
+
+  .grid-ds-offset-1 {
+    margin-left: 8.333333%;
+  }
+
+  .grid-ds-offset-0 {
+    margin-left: 0;
+  }
+}
+/*
+ * Styles for Big Desktops (Large Monitor)
+ * ====================================================== */
+@media (min-width: 1200px) {
+  .grid-bd-12 {
+    width: 100%;
+  }
+
+  .grid-bd-11 {
+    width: 91.666666%;
+  }
+
+  .grid-bd-10 {
+    width: 83.333333%;
+  }
+
+  .grid-bd-9 {
+    width: 75%;
+  }
+
+  .grid-bd-8 {
+    width: 66.666666%;
+  }
+
+  .grid-bd-7 {
+    width: 58.333333%;
+  }
+
+  .grid-bd-6 {
+    width: 50%;
+  }
+
+  .grid-bd-5 {
+    width: 41.666666%;
+  }
+
+  .grid-bd-4 {
+    width: 33.333333%;
+  }
+
+  .grid-bd-3 {
+    width: 25%;
+  }
+
+  .grid-bd-2 {
+    width: 16.666666%;
+  }
+
+  .grid-bd-1 {
+    width: 8.333333%;
+  }
+
+  .grid-bd-offset-12 {
+    margin-left: 100%;
+  }
+
+  .grid-bd-offset-11 {
+    margin-left: 91.666666%;
+  }
+
+  .grid-bd-offset-10 {
+    margin-left: 83.333333%;
+  }
+
+  .grid-bd-offset-9 {
+    margin-left: 75%;
+  }
+
+  .grid-bd-offset-8 {
+    margin-left: 66.666666%;
+  }
+
+  .grid-bd-offset-7 {
+    margin-left: 58.333333%;
+  }
+
+  .grid-bd-offset-6 {
+    margin-left: 50%;
+  }
+
+  .grid-bd-offset-5 {
+    margin-left: 41.666666%;
+  }
+
+  .grid-bd-offset-4 {
+    margin-left: 33.333333%;
+  }
+
+  .grid-bd-offset-3 {
+    margin-left: 25%;
+  }
+
+  .grid-bd-offset-2 {
+    margin-left: 16.666666%;
+  }
+
+  .grid-bd-offset-1 {
+    margin-left: 8.333333%;
+  }
+}
+/*
+ * General Styles
+ * ====================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.content-wrapper {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.content-wrapper:before,
+.content-wrapper:after,
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.fc-black {
+  color: #333333;
+}
+
+.fc-white {
+  color: #F1F1F1;
+}
+
+.fc-faded {
+  color: #777777;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-side-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-margin {
+  margin-top: 15px;
+}
+
+.bottom-margin {
+  margin-bottom: 15px;
+}
+
+.no-border {
+  border: 0;
+}
+
+.app-well {
+  background-color: #E4E4E4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     not supported by any browser */
+}
+
+/* BOOTSTRAP PARCHES
+   ========================================================================= */
+.modal-dialog {
+  margin-top: 97px;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-header .close {
+  color: #333333;
+  font-size: 24px;
+  opacity: 1;
+}
+
+.modal-footer {
+  background-color: #F1F1F1;
+  border-top: none;
+}
+
+.modal-footer .btn {
+  border-radius: 0;
+}
+
+.modal-footer .btn-default {
+  background-color: #F5F5F5;
+}
+
+/*# sourceMappingURL=style.css.map */
