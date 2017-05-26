@@ -100,4 +100,44 @@
   margin-left: 8.333333%;
 }
 
+.app-header .title {
+  font-size: 24px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.app-header .menu-btn {
+  display: none;
+}
+
+.navbar {
+  text-align: right;
+  visibility: visible;
+  opacity: 1;
+  overflow: initial;
+  height: auto;
+  margin-bottom: -5px;
+}
+
+.navbar > ul {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar > ul > li {
+  float: left;
+}
+
+.navbar > ul > li > a {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 30px 12px;
+  color: inherit;
+}
+
 }

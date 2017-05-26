@@ -1,22 +1,34 @@
+/**
+ * // =================================== //
+ *      *** LightScript v1.0.0 ***
+ *      Author: Michael Serrato.
+ *      E-mail: mikebsg01@gmail.com
+ *      website: http://serrato.com.mx/
+ *                  *****
+ * // =================================== //
+ */
+
 function Selector(selector) {
   this.nodeElement = null; 
   return this.__constructor(selector);
 }
 
 Selector.prototype.__constructor = function(selector) {
-  if ($.isSelector(selector)) {
+  if (selector === window) {
+    this.nodeElement = selector;
+  } else if ($.isSelector(selector)) {
     this.nodeElement = selector.nodeElement;
-  } else if ($.isDOMElement(selector) && $.isDOMObject(selector)) {
+  }  else if ($.isDOMElement(selector) && $.isDOMObject(selector)) {
     this.nodeElement = selector;
-  } else if (selector === window) {
-    this.nodeElement = selector;
-  } else {
+  }  else {
     this.nodeElement = document.getElementById(selector);
   }
 }
 
-Selector.prototype.listen = function(eventType, callback) {
-    this.nodeElement.addEventListener(eventType, callback);
+Selector.prototype.event = function(eventType, callback) {
+    if ($.isDOMObject(this.nodeElement)) {
+      this.nodeElement.addEventListener(eventType, callback);
+    }
 }
 
 Selector.prototype.val = function(value) {
@@ -27,7 +39,7 @@ Selector.prototype.val = function(value) {
 }
 
 Selector.prototype.html = function(html) {
-  if (html) {
+  if (typeof html !== "undefined") {
     return this.nodeElement.innerHTML = html;
   }
   return this.nodeElement.innerHTML;
@@ -37,6 +49,14 @@ Selector.prototype.attr = function(name, value) {
   if (value) {
     this.nodeElement.setAttribute(name, value);
     return value;
+  }
+}
+
+Selector.prototype.addClass = function(className) {
+  if (this.nodeElement.classList.length != 0) {
+    this.nodeElement.classList.add(className);
+  } else {
+    this.attr('class', className);
   }
 }
 
@@ -57,3 +77,5 @@ $.isDOMObject = function(obj) {
 }
 
 $.plugin = Selector.prototype;
+
+ls = $;
