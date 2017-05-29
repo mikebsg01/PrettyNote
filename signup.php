@@ -1,74 +1,77 @@
+<?php if (!file_exists('system/core.php')) exit('Sorry, has been ocurred an error trying to load the system.');
+
+require_once 'system/Core.php';
+require_once 'libraries/Validation/Validation.php';
+
+if (isset($_POST['user']) and !empty($_POST['user'])) {
+  $userRequest = filterData($_POST['user'], [
+    'email',
+    'password',
+    'passwordConfirmation'
+  ]);
+
+  $validation = Validation::make($userRequest, [
+    'email'                 => ['required', 'email'],
+    'password'              => ['required', 'min' => 6],
+    'passwordConfirmation'  => ['required', 'equalTo' => 'password']
+  ]);
+
+  if ($validation->fails()) {
+    $errors = $validation->errors();
+  } else {
+    // VERIFY THE DATA IN THE DATABASE...
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <title>Bienvenido a PrettyNote &middot; Registro</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Sonsie+One" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css?v=<?=time()?>">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=<?=time()?>">
+  <?php include 'templates/head.php' ?>
 </head>
 <body>
 <div id="page-signup">
   <div class="content-wrapper">
-    <header>
-      <div class="container app-header">
-        <div class="header-container grid-sp-12 grid-ds-10 grid-ds-offset-1 grid-bd-8 grid-bd-offset-2">    
-          <div class="grid-sp-12 grid-ta-3 grid-ta-offset-1 grid-ds-4 grid-ds-offset-0">
-            <a href="#">
-              <h1 class="title">PrettyNote <span class="fa fa-bookmark"></span></h1>
-            </a>
-            <button id="menu-button" class="menu-btn btn pull-right">
-              <span class="fa fa-bars"></span>
-            </button>
-          </div>
-          <div class="grid-sp-12 grid-ta-8 grid-ds-8">
-            <nav id="navbar" class="navbar">
-              <ul>
-                <li>
-                  <a id="link-login" href="#">
-                    <span class="fa fa-user"></span>
-                    Ingresar
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+    <?php include 'templates/header.php' ?>
     <section>
       <div class="app-content">
         <div class="app-login container">
           <div class="grid-sp-12 content">
             <div class="grid-bd-4 grid-bd-offset-4">  
-              <div class="login-container box grid-sp-12">
+              <div class="signup-container box grid-sp-12">
                 <header>
                   <h1 class="text-center"> Registro </h1>
                 </header>
                 <div class="grid-sp-12">
                   <div class="grid-sp-10 grid-sp-offset-1">
-                    <form>
+                    <form action="signup.php" method="POST">
                       <div class="input-container">
-                        <input type="text" id="input-username" placeholder="Usuario">
+                        <input type="email" id="user-email" name="user[email]" placeholder="Correo electrónico" <?=(isset($userRequest['email']) ? "value=\"{$userRequest['email']}\"" : '')?>>
+                        <?php if (isset($errors) and $errors->has('email')): ?>
+                          <span class="lbl-error"><?= $errors->first('email') ?></span>
+                        <?php endif; ?>
                       </div>
                       <div class="input-container">
-                        <input type="password" id="input-password" placeholder="Contraseña">
+                        <input type="password" id="user-password" name="user[password]" placeholder="Contraseña" <?=(isset($userRequest['password']) ? "value=\"{$userRequest['password']}\"" : '')?>>
+                        <?php if (isset($errors) and $errors->has('password')): ?>
+                          <span class="lbl-error"><?= $errors->first('password') ?></span>
+                        <?php endif; ?>
                       </div>
                       <div class="input-container">
-                        <input type="password" id="input-password-confirm" placeholder="Confirm. Contraseña">
+                        <input type="password" id="user-password-confirmation" name="user[passwordConfirmation]" placeholder="Confirm. Contraseña" <?=(isset($userRequest['passwordConfirmation']) ? "value=\"{$userRequest['passwordConfirmation']}\"" : '')?>>
+                        <?php if (isset($errors) and $errors->has('passwordConfirmation')): ?>
+                          <span class="lbl-error"><?= $errors->first('passwordConfirmation') ?></span>
+                        <?php endif; ?>
                       </div>
                       <div class="input-container text-center">
-                        <button id="btn-signup" class="btn">Ingresar</button>
+                        <button id="btn-signup" class="btn" type="submit">Registrarme</button>
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
-              <footer>
-                <div class="box grid-sp-12">
-                  <p class="text-center">Copyright © 2016 · Developer: Michael Serrato · <a href="mailto:mikebsg01@gmail.com">mikebsg01@gmail.com</a> · All Rights Reserved.</p>
-                </div>
-              </footer>
+              <?php include 'templates/footer.php' ?>
             </div>
           </div>
         </div>
@@ -76,7 +79,5 @@
     </section>
   </div>
 </div>
-<script type="text/javascript" src="assets/js/lightscript.js?v=<?=time()?>"></script>
-<script type="text/javascript" src="assets/js/signup.js?v=<?=time()?>"></script>
 </body>
 </html>

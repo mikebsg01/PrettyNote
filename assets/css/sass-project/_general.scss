@@ -1,7 +1,21 @@
 /*
- * General Styles
+ * General Variables
  * ====================================================== */
 
+// Primary Colors
+$yellow: #f9bc32;
+
+// General Purpose Colors
+$white: #FFFFFF;
+$whiteGrayish: #F1F1F1;
+$blackLightest: #777777;
+$blackLight: #333333;
+$black: #000000;
+$red: #F00505;
+
+/*
+ * General Styles
+ * ====================================================== */
 
 * {
   -webkit-box-sizing: border-box;
@@ -41,7 +55,7 @@ input:active,
 textarea:hover,
 textarea:focus,
 textarea:active {
-  border: 1px solid #f9bc32;
+  border: 1px solid $yellow;
 }
 
 .content-wrapper {
@@ -73,19 +87,19 @@ video {
 }
 
 .bg-black {
-  background-color: #000000;
+  background-color: $black;
 }
 
 .fc-black {
-  color: #333333;
+  color: $blackLight;
 }
 
 .fc-white {
-  color: #F1F1F1;
+  color: $whiteGrayish;
 }
 
 .fc-faded {
-  color: #777777;
+  color: $blackLightest;
 }
 
 .no-padding {
@@ -173,14 +187,21 @@ video {
   padding: 6px 10px;
 }
 
+.input-container > .lbl-error {
+  display: block;
+  padding: 6px 2px 2px;
+  color: $red;
+}
+
 .btn {
   display: inline-block;
-  padding: 6px 12px;
-  background-color: #FFFFFF;
-  color: #9F9F9F;
-  border: 1px solid #9F9F9F;
+  padding: 8px 16px;
+  background-color: $yellow;
+  color: $whiteGrayish;
+  border: none;
   border-radius: 3px;
-  font-size: 18px;
+  font-weight: regular;
+  font-size: 17px;
   cursor: pointer;
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
@@ -192,12 +213,25 @@ video {
 .btn:hover,
 .btn:focus,
 .btn:active {
-  background-color: #F1F1F1;
-  color: #5D5D5D;
-  border: 1px solid #5D5D5D;
+  background-color: darken($yellow, 10%);
+  color: $white;
 }
 
 .lbl {
   line-height: 36px;
   font-size: 18px;
+}
+
+/*
+ * App Styles
+ * ====================================================== */
+.app-pprint {
+  padding: 8px 12px;
+  background-color: $blackLightest;
+  border: 1px solid darken($blackLightest, 10%);
+  border-radius: 3px;
+  color: $whiteGrayish;
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.9px;
 }
